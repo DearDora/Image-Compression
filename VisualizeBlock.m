@@ -1,0 +1,10 @@
+operahall = imread('operahall.jpg');
+topLeft = operahall(1:32,1:32);
+F = fft2(topLeft);
+figure(1);
+bar3(abs(F),'w');
+title('Original');
+F(1,1) = 0;
+figure(2);
+bar3(abs(F),'w');
+title('Compressed');
